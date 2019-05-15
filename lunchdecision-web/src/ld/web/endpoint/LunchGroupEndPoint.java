@@ -15,14 +15,6 @@ import ld.domain.lunch_group.LunchGroup;
 //@Consumes({ MediaType.APPLICATION_JSON })
 @Produces({ MediaType.APPLICATION_JSON })
 public class LunchGroupEndPoint {
-
-	@GET
-	@Path("")
-	public Response getLunchGroups() {
-		
-		
-		return null;
-	}
 	
 	@GET
 	@Path("{lunchGroupId}")
