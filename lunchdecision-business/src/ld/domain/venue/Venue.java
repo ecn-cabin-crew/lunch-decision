@@ -2,8 +2,10 @@ package ld.domain.venue;
 
 import geolocation.util.GeoDistCalculator;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@NoArgsConstructor
 public class Venue {
 
 	@Getter @Setter
