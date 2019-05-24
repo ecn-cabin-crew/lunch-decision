@@ -47,8 +47,22 @@ public class Sampler {
 		return sum;
 	}
 
+	/**
+	 * 
+	 * @param cdfArray - Cumulative distribution function (array)
+	 * @return index - index of chosen value
+	 */
 	public static int sample(double[] cdfArray) {
-		// TODO Auto-generated method stub
-		return 0;
+		double randomNum = Math.random();
+		
+		int index = 0;
+		for (double value : cdfArray) {
+			if (value >= randomNum) {
+				break;
+			}
+			index++;
+		}
+		
+		return index;
 	}
 }
