@@ -26,6 +26,12 @@ public class Venue {
 		this.name = name;
 	}
 	
+	public Venue(String name, double latitude, double longitude) {
+		this.name = name;
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+	
 	public boolean isWithin(Venue venue2, double distanceInKM) {
 		double calculatedDist = GeoDistCalculator.distanceInKM(this.latitude, this.longitude, venue2.latitude, venue2.longitude);
 		return calculatedDist <= distanceInKM;
