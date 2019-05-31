@@ -20,14 +20,14 @@ public class Venue {
 	@Getter @Setter
 	private double latitude;
 	@Getter @Setter
-	private double longtitude;
+	private double longitude;
 	
 	public Venue(String name) {
 		this.name = name;
 	}
 	
 	public boolean isWithin(Venue venue2, double distanceInKM) {
-		double calculatedDist = GeoDistCalculator.distanceInKM(this.latitude, this.longtitude, venue2.latitude, venue2.longtitude);
+		double calculatedDist = GeoDistCalculator.distanceInKM(this.latitude, this.longitude, venue2.latitude, venue2.longitude);
 		return calculatedDist <= distanceInKM;
 	}
 	
