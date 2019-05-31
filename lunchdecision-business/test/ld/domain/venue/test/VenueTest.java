@@ -13,11 +13,11 @@ public class VenueTest {
 	public void venueIsWithinOneKilometer() {
 		Venue venue1 = new Venue();
 		venue1.setLatitude(1);
-		venue1.setLongtitude(2);
+		venue1.setLongitude(2);
 		
 		Venue venue2 = new Venue();
 		venue2.setLatitude(1);
-		venue2.setLongtitude(2);
+		venue2.setLongitude(2);
 		
 		boolean isWithin = venue1.isWithin(venue2, 1);
 		
@@ -28,11 +28,11 @@ public class VenueTest {
 	public void venueIsNotWithinOneKilometer() {
 		Venue venue1 = new Venue();
 		venue1.setLatitude(1);
-		venue1.setLongtitude(2);
+		venue1.setLongitude(2);
 		
 		Venue venue2 = new Venue();
 		venue2.setLatitude(1);
-		venue2.setLongtitude(6);
+		venue2.setLongitude(6);
 		
 		boolean isWithin = venue1.isWithin(venue2, 1);
 		
