@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="WINDOWS-1252" standalone="no"?>
+<eclipse-userlibraries version="2">
+    <library name="org.projectlombok" systemlibrary="false">
+        <archive javadoc="jar:platform:/resource/java-libs/org/lombok/1.16.20/lombok-1.16.20-javadoc.jar!/" path="/java-libs/org/lombok/1.16.20/lombok-1.16.20.jar" source="/java-libs/org/lombok/1.16.20/lombok-1.16.20-sources.jar"/>
+    </library>
+</eclipse-userlibraries>
