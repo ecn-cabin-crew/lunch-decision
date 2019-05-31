@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ld.domain.constraint.Constraint;
+import ld.domain.constraint.LocationConstraint;
 import ld.domain.venue.Venue;
 
 public class SimpleDecisionEngine implements DecisionEngine {
@@ -19,14 +20,15 @@ public class SimpleDecisionEngine implements DecisionEngine {
 	}
 
 	@Override
-	public Venue[] getRecommendation(int numberOfRecommendations) {
+	public List<Venue> getRecommendation(int numberOfRecommendations) {
 		// TODO
-		Venue[] recomendations = new Venue[numberOfRecommendations];
+		List<Venue> recomendations = new ArrayList<>();
 		
-		List<Venue> tempVenuePool = new ArrayList<>(venuePool);
+		List<Venue> tempVenuePool = applyHardConstraints(this.venuePool);
 		for (int i=0; i<numberOfRecommendations; i++) {
+			if (tempVenuePool.size() == 0) break;
 			int index = (int)Math.floor(Math.random() * tempVenuePool.size());
-			recomendations[i] = tempVenuePool.remove(index);
+			recomendations.add(tempVenuePool.remove(index));
 		}
 		
 		return recomendations;
@@ -51,6 +53,23 @@ public class SimpleDecisionEngine implements DecisionEngine {
 	@Override
 	public void setVenuePool(List<Venue> venuePool) {
 		this.venuePool = venuePool;
+	}
+	
+	private List<Venue> applyHardConstraints(List<Venue> venuePool) {
+		
+		List<Venue> prunedVenuePool = new ArrayList<>(venuePool);
+		for (Venue venue : venuePool) {
+			for (Constraint constraint : hardConstraints) {
+				if (constraint instanceof LocationConstraint) {
+					LocationConstraint loc = (LocationConstraint)constraint;
+					Venue venue2 = new Venue("", loc.getLatitude(), loc.getLongitude());
+					if (!venue.isWithin(venue2, loc.getRadius())) {
+						prunedVenuePool.remove(venue);
+					}
+				}
+			}
+		}
+		return prunedVenuePool;
 	}
 
 }
