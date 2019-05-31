@@ -9,11 +9,9 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-<<<<<<< HEAD
 import ld.domain.constraint.Constraint;
 import ld.domain.constraint.LocationConstraint;
-=======
->>>>>>> c0aabe87b29033adb44614e6e73f00c70dbfaaa3
+
 import ld.domain.decision_engine.DecisionEngine;
 import ld.domain.decision_engine.SimpleDecisionEngine;
 import ld.domain.venue.Venue;
@@ -27,21 +25,15 @@ public class SimpleDecisionEngineTest {
 		decisionEngine = new SimpleDecisionEngine();
 		List<Venue> venuePool = new ArrayList<>();
 		for (int i = 0; i < 10; i++) {
-<<<<<<< HEAD
 			venuePool.add(new Venue("BMC" + i, 1, 2));
 		}
-		
-=======
-			venuePool.add(new Venue("BMC" + i));
-		}
->>>>>>> c0aabe87b29033adb44614e6e73f00c70dbfaaa3
+
 		decisionEngine.setVenuePool(venuePool);
 	}
 	
 	@Test
 	public void CanGetRecommendation() {
 		int expectedNumberOfRecommendation = 10;
-<<<<<<< HEAD
 		List<Venue> recommendation = decisionEngine.getRecommendation(expectedNumberOfRecommendation);
 		assertNotNull(recommendation);
 		assertEquals(expectedNumberOfRecommendation, recommendation.size());
@@ -67,11 +59,5 @@ public class SimpleDecisionEngineTest {
 		
 		assertEquals(5, recommendation.size());
 	}
-=======
-		Venue[] recommendation = decisionEngine.getRecommendation(expectedNumberOfRecommendation);
-		assertNotNull(recommendation);
-		assertEquals(expectedNumberOfRecommendation, recommendation.length);
-	}
-	
->>>>>>> c0aabe87b29033adb44614e6e73f00c70dbfaaa3
+
 }

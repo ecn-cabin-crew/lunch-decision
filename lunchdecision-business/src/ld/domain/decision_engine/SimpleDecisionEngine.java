@@ -4,10 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ld.domain.constraint.Constraint;
-<<<<<<< HEAD
 import ld.domain.constraint.LocationConstraint;
-=======
->>>>>>> c0aabe87b29033adb44614e6e73f00c70dbfaaa3
 import ld.domain.venue.Venue;
 
 public class SimpleDecisionEngine implements DecisionEngine {
@@ -23,7 +20,6 @@ public class SimpleDecisionEngine implements DecisionEngine {
 	}
 
 	@Override
-<<<<<<< HEAD
 	public List<Venue> getRecommendation(int numberOfRecommendations) {
 		// TODO
 		List<Venue> recomendations = new ArrayList<>();
@@ -33,16 +29,6 @@ public class SimpleDecisionEngine implements DecisionEngine {
 			if (tempVenuePool.size() == 0) break;
 			int index = (int)Math.floor(Math.random() * tempVenuePool.size());
 			recomendations.add(tempVenuePool.remove(index));
-=======
-	public Venue[] getRecommendation(int numberOfRecommendations) {
-		// TODO
-		Venue[] recomendations = new Venue[numberOfRecommendations];
-		
-		List<Venue> tempVenuePool = new ArrayList<>(venuePool);
-		for (int i=0; i<numberOfRecommendations; i++) {
-			int index = (int)Math.floor(Math.random() * tempVenuePool.size());
-			recomendations[i] = tempVenuePool.remove(index);
->>>>>>> c0aabe87b29033adb44614e6e73f00c70dbfaaa3
 		}
 		
 		return recomendations;
@@ -68,8 +54,7 @@ public class SimpleDecisionEngine implements DecisionEngine {
 	public void setVenuePool(List<Venue> venuePool) {
 		this.venuePool = venuePool;
 	}
-<<<<<<< HEAD
-	
+
 	private List<Venue> applyHardConstraints(List<Venue> venuePool) {
 		
 		List<Venue> prunedVenuePool = new ArrayList<>(venuePool);
@@ -86,7 +71,5 @@ public class SimpleDecisionEngine implements DecisionEngine {
 		}
 		return prunedVenuePool;
 	}
-=======
->>>>>>> c0aabe87b29033adb44614e6e73f00c70dbfaaa3
 
 }

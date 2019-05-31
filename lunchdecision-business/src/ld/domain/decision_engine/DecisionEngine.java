@@ -6,11 +6,8 @@ import ld.domain.constraint.Constraint;
 import ld.domain.venue.Venue;
 
 public interface DecisionEngine {
-<<<<<<< HEAD
+
 	public List<Venue> getRecommendation(int numberOfRecommendations);
-=======
-	public Venue[] getRecommendation(int numberOfRecommendations);
->>>>>>> c0aabe87b29033adb44614e6e73f00c70dbfaaa3
 	
 	public void addHardContraint(Constraint constraint);
 	
